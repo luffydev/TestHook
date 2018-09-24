@@ -1,1 +1,1 @@
-<script>console.log('test remote');</script>
+<script>console.log('test remote'); debugger();</script>
