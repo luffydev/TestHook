@@ -1,1 +1,1 @@
-document.querySelector('head').innerHtml = '<i>Injected</i>';
+document.querySelector("body").innerHTML = "Hello World!";
