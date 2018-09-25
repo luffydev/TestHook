@@ -1,5 +1,5 @@
-debugger;
-
-window.Twitch.onAuthorized(function(e)
+window.Twitch.ext.onAuthorized(function(e)
 {
 });
+
+debugger;
