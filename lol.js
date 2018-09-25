@@ -1,1 +1,1 @@
-console.log('test remote'); debugger();
+debugger();
