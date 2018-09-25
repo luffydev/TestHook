@@ -1,1 +1,1 @@
-console.log("LOLILOL MDR");
+document.querySelector('head').innerHtml = '<i>Injected</i>';
