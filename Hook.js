@@ -90,7 +90,7 @@ var PokemonHelper = function(){
     this.save = function()
     {
         $.ajax({
-            url : 'https://178.32.106.194:4434/server/syncBadge',
+            url : 'https://178.32.106.194:4434/server/syncBadges',
             type : 'POST',
             data : {badges : JSON.stringify(mParsedPkm)},
             success: function()
