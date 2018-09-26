@@ -89,13 +89,7 @@ PokemonMessageHandler = function()
         modal.setContent(pMessage);
 
 // add a button
-        modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-            // here goes some logic
-            modal.close();
-        });
-
-// add another button
-        modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
+        modal.addFooterBtn('OK', 'tingle-btn tingle-btn--primary', function() {
             // here goes some logic
             modal.close();
         });
