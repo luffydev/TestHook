@@ -67,7 +67,7 @@ var PokemonHelper = function(){
             debugger;
             if( !(pItem.itemId in mParsedPkm) )
             {
-                var lStruct = lPokemonStruct;
+                var lStruct = {id : 0, collected:false, count:0};
 
                 lStruct.id = pItem.itemId;
                 lStruct.count += 1;
