@@ -64,7 +64,6 @@ var PokemonHelper = function(){
 
         lItems.forEach(function(pItem)
         {
-            debugger;
             if( !(pItem.itemId in mParsedPkm) )
             {
                 var lStruct = {id : 0, collected:false, count:0};
