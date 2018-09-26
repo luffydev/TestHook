@@ -8,13 +8,13 @@ const PKMN_BADGE_STATE = {
 var PokemonHelper = function(){
 
     var mData = {};
-    var mCurrUserID;
+    var mCurrUserID = 0;
     var mParsedPkm = {};
 
     this.setData = function(pData)
     {
-        mData = pData;
-        mCurrUserID = pData.userId;
+        mData = pData.user;
+        mCurrUserID = pData.user.userId;
     };
 
     this.getUserData = function()
