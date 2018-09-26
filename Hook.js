@@ -131,5 +131,6 @@ PkmnHelper.getUserData().then(function()
 
 }).catch(function(pError, pErrorCode)
 {
+    debugger;
     PkmnMessageHandler.showMessage("Erreur lors de l'authentification auprès de l'extension de Badge. (Erreur " + pErrorCode +" )");
 });
