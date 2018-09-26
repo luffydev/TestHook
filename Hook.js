@@ -19,7 +19,7 @@ var PokemonHelper = function(){
     {
       var lContext = this;
 
-      return Promise(function(pResolve, pReject)
+      return new Promise(function(pResolve, pReject)
       {
 
           window.Twitch.ext.onAuthorized(function(pTwitchInfos)
