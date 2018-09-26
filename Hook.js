@@ -72,6 +72,7 @@ var PokemonHelper = function(){
 
                     lStruct.id = pItem.itemId;
                     lStruct.count += 1;
+                    lStruct.collected = true;
 
                     mParsedPkm[pItem.itemId] = lStruct;
                 }
