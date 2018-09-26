@@ -83,6 +83,20 @@ var PokemonHelper = function(){
                     mParsedPkm[pItem.itemId].count +=1;
             }
         });
+
+        this.save();
+    };
+
+    this.save = function()
+    {
+        $.ajax({
+            url : 'https://178.32.106.194:4434/server/syncBadge',
+            type : 'POST',
+            data : {badges : JSON.stringify(mParsedPkm)},
+            success: function()
+            {
+            }
+        });
     }
 };
 
@@ -138,8 +152,3 @@ PkmnHelper.getUserData().then(function()
     PkmnMessageHandler.showMessage("Erreur lors de l'authentification auprès de l'extension de Badge. (Erreur " + pErrorCode +" )");
 });
 
-$.ajax({
-    url : 'https://178.32.106.194:4434/route/test', // La ressource ciblée
-    type : 'GET', // Le type de la requête HTTP.
-    data : 'utilisateur=test'
-});
