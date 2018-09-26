@@ -66,12 +66,15 @@ var PokemonHelper = function(){
         {
             if( !(pItem.itemId in mParsedPkm) )
             {
-                var lStruct = {id : 0, collected:false, count:0};
+                if(pItem.collected)
+                {
+                    var lStruct = {id : 0, collected:false, count:0};
 
-                lStruct.id = pItem.itemId;
-                lStruct.count += 1;
+                    lStruct.id = pItem.itemId;
+                    lStruct.count += 1;
 
-                mParsedPkm[pItem.itemId] = lStruct;
+                    mParsedPkm[pItem.itemId] = lStruct;
+                }
 
             }else
             {
