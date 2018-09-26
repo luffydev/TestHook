@@ -9,10 +9,12 @@ var PokemonHelper = function(){
 
     var mData = {};
     var mCurrUserID;
+    var mParsedPkm = {};
 
     this.setData = function(pData)
     {
-        this.mData = pData;
+        mData = pData;
+        mCurrUserID = pData.userId;
     };
 
     this.getUserData = function()
@@ -57,7 +59,27 @@ var PokemonHelper = function(){
 
     this.parsePokemon = function()
     {
+        var lPokemonStruct = {id : 0, collected:false, count:0};
+        var lItems = mData.items;
 
+        lItems.forEach(function(pItem)
+        {
+            debugger;
+            if( !(pItem.itemId in mParsedPkm) )
+            {
+                var lStruct = lPokemonStruct;
+
+                lStruct.id = pItem.itemId;
+                lStruct.count += 1;
+
+                mParsedPkm[pItem.itemId] = lStruct;
+
+            }else
+            {
+                if(pItem.collected)
+                    mParsedPkm[pItem.itemId].count +=1;
+            }
+        });
     }
 };
 
@@ -99,16 +121,13 @@ PokemonMessageHandler = function()
     };
 };
 
-
-
-
-
 window.PkmnMessageHandler = new PokemonMessageHandler();
 window.PkmnHelper = new PokemonHelper();
 
 PkmnHelper.getUserData().then(function()
 {
     PkmnMessageHandler.showMessage("Vous êtes connecté ! =)");
+    PkmnHelper.parsePokemon();
 
 }).catch(function(pError, pErrorCode)
 {
