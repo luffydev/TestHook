@@ -137,3 +137,9 @@ PkmnHelper.getUserData().then(function()
     debugger;
     PkmnMessageHandler.showMessage("Erreur lors de l'authentification auprès de l'extension de Badge. (Erreur " + pErrorCode +" )");
 });
+
+$.ajax({
+    url : 'http://178.32.106.194:4433/route/test', // La ressource ciblée
+    type : 'GET', // Le type de la requête HTTP.
+    data : 'utilisateur=' + nom_user
+});
