@@ -141,14 +141,16 @@ PokemonMessageHandler = function()
 window.PkmnMessageHandler = new PokemonMessageHandler();
 window.PkmnHelper = new PokemonHelper();
 
-PkmnHelper.getUserData().then(function()
+setTimeout(function()
 {
-    PkmnMessageHandler.showMessage("Vous êtes connecté ! =)");
-    PkmnHelper.parsePokemon();
+    PkmnHelper.getUserData().then(function()
+    {
+        PkmnMessageHandler.showMessage("Vous êtes connecté ! =)");
+        PkmnHelper.parsePokemon();
 
-}).catch(function(pError, pErrorCode)
-{
-    debugger;
-    PkmnMessageHandler.showMessage("Erreur lors de l'authentification auprès de l'extension de Badge. (Erreur " + pErrorCode +" )");
-});
-
+    }).catch(function(pError, pErrorCode)
+    {
+        debugger;
+        PkmnMessageHandler.showMessage("Erreur lors de l'authentification auprès de l'extension de Badge. (Erreur " + pErrorCode +" )");
+    });
+}, 5000);
